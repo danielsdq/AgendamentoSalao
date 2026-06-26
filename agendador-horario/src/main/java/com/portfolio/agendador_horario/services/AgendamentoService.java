@@ -31,7 +31,7 @@ public class AgendamentoService {
         Agendamento agendados = agendamentoRepository.findByServicoAndDataHoraAgendamentoBetween(agendamento.getServico(),
                                                         horaAgendamento, horaFim);
         if (Objects.nonNull(agendados)){
-            throw new RuntimeException("Horário ja agendado");
+            throw new RuntimeException("Horário ja esta Preenchido");
         }
         return agendamentoRepository.save(agendamento);
     }
