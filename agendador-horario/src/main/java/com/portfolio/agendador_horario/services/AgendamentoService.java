@@ -8,6 +8,7 @@ import com.portfolio.agendador_horario.infrastructure.entity.Agendamento;
 import com.portfolio.agendador_horario.infrastructure.repository.AgendamentoRepository;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -40,7 +41,7 @@ public class AgendamentoService {
         agendamentoRepository.deleteByDataHoraAgendamentoAndCliente( dataHoraAgendamento, cliente);
         
 }
-   public Agendamento buscarAgendamentoDia(LocalDate data){
+   public List<Agendamento> buscarAgendamentoDia(LocalDate data){
         LocalDateTime primeiraHoraDia = data.atStartOfDay();
         LocalDateTime horaFinalDia = data.atTime(23, 59, 59);
            
